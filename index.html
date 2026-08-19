@@ -13,21 +13,44 @@
         }
 
         body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            background-color: #222222;
+            color: #ffffff;
             line-height: 1.6;
+            position: relative;
+        }
+
+        /* ==== MARCA D'ÁGUA — LOGO BRANCA ==== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(80%, 600px);
+            height: min(80%, 600px);
+            background: url("imagens/logo.png") no-repeat center;
+            background-size: contain;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+            filter: brightness(0) invert(1); /* deixa a logo branca */
+        }
+
+        header, section, footer {
+            position: relative;
+            z-index: 1;
         }
 
         header {
-            background: linear-gradient(135deg, #2d3a1f, #4a5d23);
+            background: linear-gradient(135deg, #000000, #2b2b00);
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 4px solid #8b7355;
+            border-bottom: 3px solid #ffcc00;
         }
 
         header h1 {
             font-size: 2.5rem;
-            color: #f5deb3;
+            color: #ffdd00;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -35,7 +58,7 @@
 
         header p {
             font-size: 1.2rem;
-            color: #d4c5a9;
+            color: #fff8c5;
             font-style: italic;
         }
 
@@ -49,13 +72,13 @@
             background-color: #2b2b2b;
             padding: 30px;
             border-radius: 12px;
-            border-left: 5px solid #8b7355;
+            border-left: 4px solid #ffcc00;
             margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
         }
 
         .card h2 {
-            color: #c9a66b;
+            color: #ffdd00;
             margin-bottom: 20px;
             font-size: 1.4rem;
             text-transform: uppercase;
@@ -71,37 +94,49 @@
         .card ul li {
             padding: 8px 0;
             border-bottom: 1px dashed #444;
+            color: #f8f8f8;
         }
 
         .card ul li::before {
             content: "✅ ";
+            color: #ffdd00;
+        }
+
+        .card ul li strong {
+            color: #fff199;
         }
 
         .destaque {
-            background-color: #323c26;
+            background-color: #292500;
             text-align: center;
             font-size: 1.1rem;
             font-style: italic;
-            color: #e0c994;
+            color: #fff6b3;
         }
 
         .contato p {
             padding: 6px 0;
             font-size: 1rem;
+            color: #f0f0f0;
+        }
+
+        .contato p strong {
+            color: #ffdd00;
         }
 
         footer {
-            background-color: #222;
+            background-color: #1a1a1a;
             text-align: center;
             padding: 20px;
-            color: #999;
-            border-top: 2px solid #444;
+            color: #cccccc;
+            border-top: 2px solid #ffcc00;
             margin-top: 40px;
         }
 
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .card { padding: 20px; }
+            body::before { width: 90%; height: 90%; }
         }
     </style>
 </head>
