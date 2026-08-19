@@ -9,191 +9,34 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #222222;
-            color: #ffffff;
-            line-height: 1.6;
+            background-color: #e0e0e0;
+            min-height: 100vh;
             position: relative;
         }
 
-        /* ==== MARCA D'ÁGUA — LOGO BRANCA ==== */
+        /* MARCA D'ÁGUA — logo.png */
         body::before {
             content: "";
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: min(80%, 600px);
-            height: min(80%, 600px);
+            width: min(75%, 550px);
+            height: min(75%, 550px);
             background: url("imagens/logo.png") no-repeat center;
             background-size: contain;
             opacity: 0.06;
             pointer-events: none;
-            z-index: 0;
-            filter: brightness(0) invert(1); /* deixa a logo branca */
-        }
-
-        header, section, footer {
-            position: relative;
             z-index: 1;
-        }
-
-        header {
-            background: linear-gradient(135deg, #000000, #2b2b00);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ffcc00;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #ffdd00;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #fff8c5;
-            font-style: italic;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background-color: #2b2b2b;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid #ffcc00;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-        }
-
-        .card h2 {
-            color: #ffdd00;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid #444;
-            padding-bottom: 8px;
-        }
-
-        .card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .card ul li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #444;
-            color: #f8f8f8;
-        }
-
-        .card ul li::before {
-            content: "✅ ";
-            color: #ffdd00;
-        }
-
-        .card ul li strong {
-            color: #fff199;
-        }
-
-        .destaque {
-            background-color: #292500;
-            text-align: center;
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #fff6b3;
-        }
-
-        .contato p {
-            padding: 6px 0;
-            font-size: 1rem;
-            color: #f0f0f0;
-        }
-
-        .contato p strong {
-            color: #ffdd00;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            text-align: center;
-            padding: 20px;
-            color: #cccccc;
-            border-top: 2px solid #ffcc00;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .card { padding: 20px; }
-            body::before { width: 90%; height: 90%; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>El Compadres Airsoft & Tactical</h1>
-        <p>Sua loja de confiança no mundo tático!</p>
-    </header>
-
-    <section>
-        <div class="card">
-            <h2>🏠 Sobre Nós</h2>
-            <p>Somos mais que uma loja — somos a sua casa no mundo do Airsoft e do equipamento Tático! Nascemos da paixão pelo esporte, pela disciplina e pela camaradagem entre amigos. Aqui, cada cliente é tratado como parte da família.</p>
-            <br>
-            <p>Nosso compromisso é oferecer <strong>produtos de qualidade, preços justos e atendimento especializado</strong>, seja você iniciante dando os primeiros passos ou jogador experiente buscando o próximo upgrade.</p>
-        </div>
-
-        <div class="card">
-            <h2>🛒 O que você encontra aqui</h2>
-            <ul>
-                <li><strong>Armamento e Réplicas</strong> — Pistolas, Rifles, Snipers, AEG, Gás e Spring</li>
-                <li><strong>Equipamentos Táticos</strong> — Coletes, Cintos, Portadores, Capas, Mochilas</li>
-                <li><strong>Proteção e Segurança</strong> — Óculos, Máscaras, Protetores faciais e de ouvido</li>
-                <li><strong>Vestuário</strong> — Uniformes, Camuflagens, Calças, Camisetas e Bonés</li>
-                <li><strong>Peças e Manutenção</strong> — Internos, Molas, Gás, BBs, Lubrificantes e Acessórios</li>
-                <li><strong>Consultoria</strong> — Te ajudamos a montar seu equipamento do zero!</li>
-            </ul>
-        </div>
-
-        <div class="card destaque">
-            <h2>💬 Nossa Filosofia</h2>
-            <p>"Respeito, Qualidade e Confiança. Aqui você é mais que um cliente — você é nosso compadre!"</p>
-            <br>
-            <p>Entendemos que o Airsoft é mais que um esporte: é disciplina, respeito às regras, segurança e amizade. Por isso, orientamos sempre pelo uso responsável e pelo cumprimento das leis.</p>
-        </div>
-
-        <div class="card contato">
-            <h2>📍 Onde Estamos</h2>
-            <p><strong>Endereço:</strong> Rua ..., nº ... — Bairro ..., Curitiba/PR</p>
-            <p><strong>Horário de Atendimento:</strong> Seg a Sex: ... — Sábado: ...</p>
-            <p><strong>Telefone / WhatsApp:</strong> (XX) XXXXX-XXXX</p>
-            <p><strong>Instagram:</strong> @elcompadresairsoft</p>
-            <p><strong>Facebook:</strong> El Compadres Airsoft & Tactical</p>
-        </div>
-
-        <div class="card destaque">
-            <h2>🎖️ Venha nos fazer uma visita!</h2>
-            <p>Estamos prontos para te ajudar a escolher o melhor equipamento, com aquele atendimento amigo que você merece.</p>
-            <br>
-            <p><strong>El Compadres Airsoft & Tactical — Sua loja de confiança no mundo tático!</strong></p>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2026 El Compadres Airsoft & Tactical — Todos os direitos reservados.
-    </footer>
+    <!-- SÓ A MARCA D'ÁGUA -->
 
 </body>
 </html>
